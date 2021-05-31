@@ -9,11 +9,16 @@
 
 	<!-- Define your beans here -->
 
-	<bean id="myCoach" class="com.msmaker.springdemo.BaseballCoach">
+	<bean id="myFortune"
+		class="com.msmaker.springdemo.HappyFortuneService">
 	</bean>
 
-	<bean id="myGolfCoach" class="com.msmaker.springdemo.GolfCoach">
+	<bean id="myCoach" class="com.msmaker.springdemo.BaseballCoach">
+
+		<!-- set up constructor injection -->
+		<constructor-arg ref="myFortune" />
 	</bean>
+
 
 
 </beans>
