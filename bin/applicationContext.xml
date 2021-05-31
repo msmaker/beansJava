@@ -13,7 +13,7 @@
 		class="com.msmaker.springdemo.HappyFortuneService">
 	</bean>
 
-	<bean id="myCoach" class="com.msmaker.springdemo.BaseballCoach">
+	<bean id="myCoach" class="com.msmaker.springdemo.TrackCoach">
 
 		<!-- set up constructor injection -->
 		<constructor-arg ref="myFortune" />
