@@ -9,8 +9,12 @@
 
 	<!-- Define your beans here -->
 
-	<bean id="myCoach" class="com.msmaker.springdemo.TrackCoach">
+	<bean id="myCoach" class="com.msmaker.springdemo.BaseballCoach">
 	</bean>
+
+	<bean id="myGolfCoach" class="com.msmaker.springdemo.GolfCoach">
+	</bean>
+
 
 </beans>
 
