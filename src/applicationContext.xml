@@ -7,10 +7,15 @@
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context.xsd">
 
+	<!-- load the properties file: sport.properties -->
+	<context:property-placeholder
+		location="classpath:sport.properties" />
+
 	<!-- Define your beans here -->
 
 	<bean id="myFortuneService"
-		class="com.msmaker.springdemo.HappyFortuneService">
+	class="com.msmaker.springdemo.RandomFortuneService">
+		<!--  class="com.msmaker.springdemo.HappyFortuneService">-->
 	</bean>
 
 	<bean id="myCoach" class="com.msmaker.springdemo.TrackCoach">
@@ -26,9 +31,16 @@
 		<property name="FortuneService" ref="myFortuneService" />
 
 		<!-- inject literal values -->
-		<property name="emailAdress" value="marco@gamil.com/" />
-		<property name="team" value="Sunrisers Hyderabad" />
+		<property name="emailAdress" value="${foo.email}" />
+		<property name="team" value="${foo.team}" />
 	</bean>
+	
+	<bean id="myGolfCoach"
+ 		class="com.msmaker.springdemo.GolfCoach">	 
+ 		
+ 		<!-- set up constructor injection -->
+ 		<constructor-arg ref="myFortuneService" />
+ 	</bean>
 
 </beans>
 
