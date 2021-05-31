@@ -4,8 +4,28 @@ public class CricketCoach implements Coach {
 
 	private FortuneService fortuneService;
 
+	// add new fields for emailAddress and team
+	private String emailAdress;
+	private String team;
+
 	public CricketCoach() {
 		System.out.println("CricketCoach: inside no-arg constructor");
+	}
+
+	public String getEmailAdress() {
+		return emailAdress;
+	}
+
+	public void setEmailAdress(String emailAdress) {
+		this.emailAdress = emailAdress;
+	}
+
+	public String getTeam() {
+		return team;
+	}
+
+	public void setTeam(String team) {
+		this.team = team;
 	}
 
 	public void setFortuneService(FortuneService fortuneService) {
